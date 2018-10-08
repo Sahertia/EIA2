@@ -19,4 +19,4 @@ namespace aufgabe0 {
 
     
     document.addEventListener('DOMContentLoaded',main);
-}
+    }
