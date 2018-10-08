@@ -1,5 +1,5 @@
 /* Aufgabe: Aufgabe 0
-Name: Rouven Sahertian
+Name: Rouven Sahertian  
 Matrikel: 259665
 Datum: 07.10.2018
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
@@ -19,4 +19,4 @@ namespace Aufgabe0 {
 
     
     document.addEventListener('DOMContentLoaded',main);
-    }
+}
