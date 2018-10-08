@@ -5,7 +5,7 @@ Datum: 07.10.2018
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert. */
 
-namespace aufgabe0 {
+namespace Aufgabe0 {
         
     function main() {
         var i:string = prompt("Wie heisst du?");
