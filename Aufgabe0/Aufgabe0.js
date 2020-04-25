@@ -1,3 +1,4 @@
+"use strict";
 /* Aufgabe: Aufgabe 0
 Name: Rouven Sahertian
 Matrikel: 259665
@@ -16,3 +17,4 @@ var Aufgabe0;
     }
     document.addEventListener('DOMContentLoaded', main);
 })(Aufgabe0 || (Aufgabe0 = {}));
+//# sourceMappingURL=Aufgabe0.js.map
