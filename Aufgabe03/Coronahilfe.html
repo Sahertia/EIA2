@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>HomeHelp</title>
+	<link rel="stylesheet" href="HouseHelp.css" type="text/css" media="screen" />
+	<script src="HouseHelp.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<header>
+		<h1>HomeHelp</h1>
+		<p>Choose what type of HomeHelp you need and fill in the formular.</p>
+	</header>
+
+	<form>
+		<div id="shopping">
+			<h3>Shopping</h3>
+			<fieldset>
+				<legend>
+					<h4>Shoppinglist</h4>
+				</legend>
+				<input type="checkbox" name="Shoppinglist" id="toilet paper" value="Toilet Paper" price="1.50">
+				<label for="toilet paper">Toilet Paper</label>
+				<input type="checkbox" name="Shoppinglist" id="noodles" value="Noodles" price="0.60">
+				<label for="noodles">Noodles</label>
+				<input type="checkbox" name="Shoppinglist" id="weat" value="Weat" price="1.15">
+				<label for="weat">Weat</label>
+				<input type="checkbox" name="Shoppinglist" id="yeast" value="Yeast" price="1.20">
+				<label for="yeast">Yeast</label>
+				<br>
+				<legend>
+					<h4>Shopping Preferences</h4>
+				</legend>
+				<input type="radio" name="Sopping Preferences" id="Lidl" value="Lidl" price="5" checked />
+				<label for="Lidl">Lidl</label>
+				<input type="radio" name="Sopping Preferences" id="Aldi" value="Aldi" price="5" />
+				<label for="Aldi">Aldi</label>
+				<input type="radio" name="Sopping Preferences" id="Edeka" value="Edeka" price="5" />
+				<label for="Edeka">Edeka</label>
+			</fieldset>
+	</form>
+	<form>
+		</div>
+		<div id="clean">
+			<h3>Clean</h3>
+			<fieldset>
+				<legend>
+					<h4>Roomcount</h4>
+				</legend>
+				<select name="Rooms" id="rooms">
+					<option value="1" price="10">1 Room</option>
+					<option value="2" price="20">2 Rooms</option>
+					<option value="3" price="30">3 Rooms</option>
+				</select>
+			</fieldset>
+		</div>
+	</form>
+	<div id="money">
+		<h3>Withdraw Money</h3>
+		<fieldset>
+			<legend>
+				<h4>choose the amount of money</h4>
+			</legend>
+			<select name="money" id="money">
+				<option value="50" price="3">50€</option>
+				<option value="100" price="3">100€</option>
+				<option value="150" price="3">150€</option>
+			</select>
+			<legend><h4>Bank</h4></legend>
+			<input type="radio" name="Bank" id="Volksbank" value="Volksbank" price="3" checked />
+			<label for="Volksbank">Volksbank</label>
+			<input type="radio" name="Bank" id="Sparkasse" value="Sparkasse" price="3" />
+			<label for="Sparkasse">Sparkasse</label>
+			<input type="radio" name="Bank" id="Wüstenrot" value="Wüstenrot" price="3" />
+			<label for="Wüstenrot">Wüstenrot</label>
+		</fieldset>
+	</div>
+	</form>
+	</div>
+
+	<div id="order">
+		<h2>Your order</h2>
+		<div id="order">
+			...
+		</div>
+	</div>
+
+</body>
+
+</html>
