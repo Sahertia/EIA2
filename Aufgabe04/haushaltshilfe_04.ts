@@ -1,6 +1,6 @@
 namespace L04_Haushaltshilfe {
     window.addEventListener("load", handleLoad);
-    //let main: HTMLDivElement = <HTMLDivElement>document.querySelector("div#main");
+        //let main: HTMLDivElement = <HTMLDivElement>document.querySelector("div#main");
     let totalcost: number = 0;
 
 
