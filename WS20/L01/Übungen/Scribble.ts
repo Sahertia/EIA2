@@ -1,2 +1,4 @@
-let a: number[] = ["manu", "rouven"];
+let a: string[] = ["manu", "rouven"];
 console.log(a[1]);
+
+
