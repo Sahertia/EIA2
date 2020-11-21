@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Hexenkessel</title>
+	<link rel="stylesheet" href="hexenkessel.css" type="text/css" media="screen" />
+	<script> src="Data.js" type="text/javascript" charset="utf-8"</script>
+	<script> src="generateContent.js" type="text/javascript" charset="utf-8"</script>
+	<!-- <script src="FormElements.js" type="text/javascript" charset="utf-8"></script> -->
+</head>
+
+<body>
+	<header>
+		<h1>Magic Potions</h1>
+		<p1>with Professor Snape</p1>
+	</header>
+
+
+	<form>
+
+		<div id="info">
+
+			<fieldset>
+
+				<h2>General Information</h2>
+
+				<fieldset id="info1">
+
+					<legend>Name</legend>
+					<input type="text" name="Text" placeholder="Enter potion name" required />
+
+				</fieldset>
+
+				<fieldset id="info2">
+
+					<legend>Description, Risks & Side Effects</legend>
+					<textarea name="Area" rows="4" placeholder="Type Description, Risks & Side Effects here"></textarea>
+
+				</fieldset>
+
+				<fieldset id="info3">
+					<legend>Effects</legend>
+					<select name="Select" class="selectEffect">
+						<!-- <optgroup label="OptGroup2"></optgroup> -->
+						<option value="option1" selected>Choose potion</option>
+						<option value="option2">Love potion</option>
+						<option value="option3">Ageing potion</option>
+						<option value="option4">Energy potion</option>
+						<option value="option5">Strenght potion</option>
+						<option value="option6">Anti-sleep potion</option>
+					</select>
+				</fieldset>
+
+				<fieldset id="info4">
+					<legend>Duration of Effect</legend>
+					<span class="slider">
+						<span>
+							1 Min
+							<input type="range" name="Duration" id="duration" min="1" max="100" step="1" value="1">
+							100 Min
+						</span>
+						<progress id="durationSlider" max="100" value="1"></progress>
+					</span>
+				</fieldset>
+		</div>
+
+
+
+	</form>
+
+	<form>
+		<div>
+			<fieldset>
+				<h2>Preparation</h2>
+
+				<fieldset id="Ingredients">
+
+					<legend>Ingredients</legend>
+
+				</fieldset>
+
+
+				<fieldset>
+					<legend>Temperature</legend>
+				</fieldset>
+
+				<fieldset>
+					<legend>Mixing</legend>
+				</fieldset>
+
+			</fieldset>
+
+
+		</div>
+	</form>
+
+	<form>
+		<div>
+			<fieldset>
+				<h2>Recipe</h2>
+			</fieldset>
+		</div>
+	</form>
+
+
+
+	<!-- <fieldset id="fsSelection">
+		<legend> Selection </legend>
+
+		Datalist
+		<input type="text" name="Datalist" list="options" placeholder="what to buy?" />
+		<datalist id="options">
+			<option value="Butter"> </option>
+			<option value="Milk"> </option>
+			<option value="Flour"> </option>
+			<option value="Sugar"> </option>
+			<option value="Eggs"> </option>
+			<option value="Salt"> </option>
+			<option value="Bread"> </option>
+		</datalist>
+
+		<hr />
+
+		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+		<label for="radio1">Radio Button 1</label>
+		<input type="radio" name="Radiogroup" value="radio2" id="radio2" />
+		<label for="radio2">Radio Button 2</label>
+		<input type="radio" name="Radiogroup" value="radio3" id="radio3" />
+		<label for="radio3">Radio Button 3</label>
+
+		<hr />
+
+		<legend> Checkbox Group </legend>
+		<input type="checkbox" name="Checkbox1" value="check1" id="check1" />
+		<label for="check1">Checkbox 1</label>
+		<input type="checkbox" name="Checkbox2" value="check2" id="check2" />
+		<label for="check2">Checkbox 2</label>
+		<input type="checkbox" name="Checkbox3" value="check3" id="check3" />
+		<label for="check3">Checkbox 3</label>
+
+		<hr />
+
+		Select Box
+		<select name="Select" id="select">
+			<optgroup label="OptGroup1"></optgroup>
+			<option value="option1">First Option</option>
+			<option value="option2" selected>Second Option</option>
+			<optgroup label="OptGroup2"></optgroup>
+			<option value="option3">Third Option</option>
+			<option value="option4">Fourth Option</option>
+		</select>
+
+	</fieldset> -->
+
+
+	<!-- <fieldset id="fsSpecial">
+		<legend> Special </legend>
+
+		Slider
+		<input type="range" name="Slider" min="0" max="1" step="0.1" value="0" />
+		<hr />
+		Stepper
+		<input type="number" name="Stepper" step="0.1" min="-1" max="1" value="0" />
+		<hr />
+		Colorpicker
+		<input type="color" name="Color" placeholder="red" id="color" value="#ff0000">
+		<hr />
+		Date
+		<input type="date" name="Date" />
+	</fieldset>
+
+	<fieldset id="fsOutput">
+		<legend> Output </legend>
+		Progress
+		<progress value="0" max="1"> </progress>
+		<hr />
+		Meter
+		<meter value="0" min="-1" max="1"> </meter>
+		<hr />
+		Output
+		<output name="out">Color picked</output>
+	</fieldset>  -->
+
+</body>
+
+</html>

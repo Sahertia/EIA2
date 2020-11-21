@@ -1,0 +1,96 @@
+* {
+	display: block;
+}
+
+
+
+
+
+body {
+	display: grid;
+	grid-template-columns: auto auto 30%;
+	grid-template-rows: auto;
+	background-color: #c9df00;
+}
+
+header {
+	grid-column: span 3;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	font-family: Tangerine;
+	font-size: 15pt;
+	background-color: rgb(204, 178, 27);
+	border-radius: 5px;
+
+	
+}
+
+      
+input[type="radio"], input[type="checkbox"], label {
+	display: inline;
+}
+label::after {
+	content:"";
+	display: block;
+}
+head {
+	display: none;
+}
+input:invalid {
+	background: #F0C060;
+}
+input:valid {
+	background: white;
+}
+input:required {
+	background: #aaaaaa;
+}
+/* fieldset {
+	width: 40%;
+} */
+/* form {  
+	display: inline;
+	/* flex-flow: row wrap; */
+	/* width: auto;
+  } */ 
+
+datalist option {
+	display: inline;	
+}
+textarea {
+	width: 100%;
+}
+h1 {
+	grid-column: span 2;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+p1 {
+	grid-column: span 2;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+input[type=text], textarea[name=Area] {
+	border: 2px solid red;
+	border-radius: 4px;
+  }
+
+.selectEffect {
+	display: inline;
+	/* width: 40%; */
+
+}
+
+/* #info3, #info4 {
+	display: inline;
+	width: 50%;
+} */
+
+}
+
+/* #infos {
+	width: 40%;
+} */
