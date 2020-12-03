@@ -1,63 +1,60 @@
+// Aufgabe: 04
+// Name: Rouven Sahertian
+// Matrikel: 259665
+// Datum: 02.12.2020
+// Hiermit versichere ich, dass ich diesen
+// Code selbst geschrieben habe. Er wurde
+// nicht kopiert und auch nicht diktiert. 
+
 namespace Hexenkessel {
 
-    export function generateContent(_data: Data): void {
+    document.addEventListener("DOMContentLoaded", init);
+    // eventListener to change after <input>
+    // document.addEventListener("input", handleChange);
 
-        for (let category in _data) {
-            // console.log(category);
-            let items: Item[] = _data[category];
+    // create Fieldsets in div.id == "Dynamics"
+    function init(): void {
 
-            let group: HTMLElement | null = null;
-            switch (category) {
+        for (let category in totalIngredientList) {
 
-                // case "Wirkung":
-                //     group = createSelect(items, category);
-                //     break;
-                
-                case "Ingredients":
-                    group = createMultiple(items, category);
-                    break;
+            let singleIngredient: Ingredient[] = totalIngredientList[category];
+            let parentFieldset: HTMLFieldSetElement = createFieldset(<HTMLDivElement>document.getElementById("Dynamics"), category);
 
-                default:
-                    break;
+            for (let i: number = 0; i < singleIngredient.length; i++) {
+                createInput (parentFieldset, singleIngredient[i], category);
             }
 
-            let fieldset: HTMLFieldSetElement | null = document.querySelector("fieldset#" + category);
-            if (fieldset && group)
-                fieldset.appendChild(group);
+            function createFieldset(_parent: HTMLDivElement, _ingredient: string): HTMLFieldSetElement {
+                //create fieldset & legend
+                let fieldset: HTMLFieldSetElement = document.createElement("fieldset");
+                let legend: HTMLLegendElement = document.createElement("legend");
+
+                //give fieldset an id and set an Attribute
+                fieldset.id = "fieldset_" + _ingredient;
+                fieldset.setAttribute("location", "Dynamics");
+
+                //give legend a innerText
+                legend.innerText = _ingredient;
+
+                //append legend to fieldset && fieldset to _parent
+                fieldset.appendChild(legend);
+                _parent.appendChild(fieldset);
+
+                //returns <fieldset>
+                return fieldset;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
-    }
-
-    function createMultiple(_items: Item[], _category: string): HTMLElement | null {
-        let group: HTMLDivElement = document.createElement("div");
-        group.id = "groupStyle";
-        
-        for (let item of _items) {
-            let checkbox: HTMLInputElement = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.setAttribute("price", item.price.toFixed(2));
-            checkbox.value = item.name;
-            checkbox.name = _category;
-            checkbox.id = item.name;
-
-            let label: HTMLLabelElement = document.createElement("label");
-            label.textContent = item.name;
-            label.htmlFor = item.name;
-
-            group.appendChild(checkbox);
-            group.appendChild(label);
-
-            //Nach jeder Zutat einen Input type number für die Mengenangabe
-            let numberAmount: HTMLInputElement = document.createElement("input");
-            numberAmount.type = "number";
-            numberAmount.value = "1";
-            numberAmount.name = item.name + "Menge";
-            numberAmount.id = item.name + "Menge";
-            numberAmount.min = "1";
-            group.appendChild(numberAmount);
-
-            let breakIt: HTMLElement = document.createElement("br");
-            group.appendChild(breakIt);
-        }
-        return group;
-    }
-}

@@ -5,8 +5,8 @@
 	<meta charset="utf-8" />
 	<title>Hexenkessel</title>
 	<link rel="stylesheet" href="hexenkessel.css" type="text/css" media="screen" />
-	<script> src="Data.js" type="text/javascript" charset="utf-8"</script>
-	<script> src="generateContent.js" type="text/javascript" charset="utf-8"</script>
+	<script src="Data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="generateContent.js" type="text/javascript" charset="utf-8"></script>
 	<!-- <script src="FormElements.js" type="text/javascript" charset="utf-8"></script> -->
 </head>
 
@@ -15,97 +15,78 @@
 		<h1>Magic Potions</h1>
 		<p1>with Professor Snape</p1>
 	</header>
+	<main>
 
+		<form>
 
-	<form>
+			<div id="info">
 
-		<div id="info">
+				<fieldset>
 
-			<fieldset>
+					<h2>General Information</h2>
 
-				<h2>General Information</h2>
+					<fieldset id="info1">
 
-				<fieldset id="info1">
+						<legend>Name</legend>
+						<input type="text" name="Text" placeholder="Enter potion name" required />
 
-					<legend>Name</legend>
-					<input type="text" name="Text" placeholder="Enter potion name" required />
+					</fieldset>
 
-				</fieldset>
+					<fieldset id="info2">
 
-				<fieldset id="info2">
+						<legend>Description, Risks & Side Effects</legend>
+						<textarea name="Area" rows="4"
+							placeholder="Type Description, Risks & Side Effects here"></textarea>
 
-					<legend>Description, Risks & Side Effects</legend>
-					<textarea name="Area" rows="4" placeholder="Type Description, Risks & Side Effects here"></textarea>
+					</fieldset>
 
-				</fieldset>
+					<fieldset id="info3">
+						<legend>Effects</legend>
+						<select name="Select" class="selectEffect">
+							<!-- <optgroup label="OptGroup2"></optgroup> -->
+							<option value="option1" selected>Choose potion</option>
+							<option value="option2">Love potion</option>
+							<option value="option3">Ageing potion</option>
+							<option value="option4">Energy potion</option>
+							<option value="option5">Strenght potion</option>
+							<option value="option6">Anti-sleep potion</option>
+						</select>
+					</fieldset>
 
-				<fieldset id="info3">
-					<legend>Effects</legend>
-					<select name="Select" class="selectEffect">
-						<!-- <optgroup label="OptGroup2"></optgroup> -->
-						<option value="option1" selected>Choose potion</option>
-						<option value="option2">Love potion</option>
-						<option value="option3">Ageing potion</option>
-						<option value="option4">Energy potion</option>
-						<option value="option5">Strenght potion</option>
-						<option value="option6">Anti-sleep potion</option>
-					</select>
-				</fieldset>
-
-				<fieldset id="info4">
-					<legend>Duration of Effect</legend>
-					<span class="slider">
-						<span>
-							1 Min
-							<input type="range" name="Duration" id="duration" min="1" max="100" step="1" value="1">
-							100 Min
+					<fieldset id="info4">
+						<legend>Duration of Effect</legend>
+						<span class="slider">
+							<span>
+								1 Min
+								<input type="range" name="Duration" id="duration" min="1" max="100" step="1" value="1">
+								100 Min
+							</span>
+							<progress id="durationSlider" max="100" value="1"></progress>
 						</span>
-						<progress id="durationSlider" max="100" value="1"></progress>
-					</span>
-				</fieldset>
-		</div>
+					</fieldset>
+			</div>
 
 
 
-	</form>
+		</form>
 
-	<form>
-		<div>
-			<fieldset>
+		<form>
+			<div id="Dynamics">
 				<h2>Preparation</h2>
+			</div>
+		</form>
 
-				<fieldset id="Ingredients">
-
-					<legend>Ingredients</legend>
-
-				</fieldset>
-
-
+		<form>
+			<div>
 				<fieldset>
-					<legend>Temperature</legend>
+					<h2>Recipe</h2>
 				</fieldset>
-
-				<fieldset>
-					<legend>Mixing</legend>
-				</fieldset>
-
-			</fieldset>
-
-
-		</div>
-	</form>
-
-	<form>
-		<div>
-			<fieldset>
-				<h2>Recipe</h2>
-			</fieldset>
-		</div>
-	</form>
+			</div>
+		</form>
 
 
 
-	<!-- <fieldset id="fsSelection">
+		<!-- <fieldset id="fsSelection">
 		<legend> Selection </legend>
 
 		Datalist
@@ -154,7 +135,7 @@
 	</fieldset> -->
 
 
-	<!-- <fieldset id="fsSpecial">
+		<!-- <fieldset id="fsSpecial">
 		<legend> Special </legend>
 
 		Slider
@@ -181,7 +162,7 @@
 		Output
 		<output name="out">Color picked</output>
 	</fieldset>  -->
-
+	</main>
 </body>
 
 </html>

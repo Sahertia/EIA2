@@ -1,6 +1,6 @@
 "use strict";
-var L04_Hexenkessel;
-(function (L04_Hexenkessel) {
+var Hexenkessel;
+(function (Hexenkessel) {
     function generateContent(_data) {
         for (let category in _data) {
             // console.log(category);
@@ -21,7 +21,7 @@ var L04_Hexenkessel;
                 fieldset.appendChild(group);
         }
     }
-    L04_Hexenkessel.generateContent = generateContent;
+    Hexenkessel.generateContent = generateContent;
     function createMultiple(_items, _category) {
         let group = document.createElement("div");
         group.id = "groupStyle";
@@ -50,5 +50,5 @@ var L04_Hexenkessel;
         }
         return group;
     }
-})(L04_Hexenkessel || (L04_Hexenkessel = {}));
+})(Hexenkessel || (Hexenkessel = {}));
 //# sourceMappingURL=generateContent.js.map
