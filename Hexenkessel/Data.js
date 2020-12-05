@@ -8,20 +8,23 @@
 // nicht kopiert und auch nicht diktiert. 
 var Hexenkessel;
 (function (Hexenkessel) {
-    Hexenkessel.data = {
-        // Wirkung: [
-        //     { name: "Unbekannt", price: 0.00 },
-        //     { name: "Heiltrank", price: 0.00 },
-        //     { name: "Liebestrank", price: 0.00 },
-        //     { name: "Stärkungstrank", price: 0.00 },
-        //     { name: "Beruhigungstrank", price: 0.00 }
-        // ],
-        Ingredients: [
-            { name: "Spinnenbeine", price: 20 },
-            { name: "Krötenaugen", price: 30 },
-            { name: "Glibberwürmer", price: 40 },
-            { name: "Schlangengift", price: 50 },
-            { name: "Fledermausflügel", price: 75 }
+    Hexenkessel.totalIngredientList = {
+        "Potion Name": [
+            { name: "", price: 1, inputType: "input" }
+        ],
+        "Description": [
+            { name: "", price: 1, inputType: "textarea" }
+        ],
+        "Effects": [
+            { name: "", price: 1, inputType: "select" }
+        ],
+        "Ingredients": [
+            { name: "Spinnenbeine", price: 20, inputType: "number" },
+            { name: "Krötenaugen", price: 30, inputType: "number" },
+            { name: "Glibberwürmer", price: 40, inputType: "number" },
+            { name: "Schlangengift", price: 50, inputType: "number" },
+            { name: "Fledermausflügel", price: 75, inputType: "number" },
+            { name: "bitumen", price: 75, inputType: "number" }
         ]
     };
 })(Hexenkessel || (Hexenkessel = {}));

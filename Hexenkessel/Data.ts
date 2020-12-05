@@ -21,14 +21,32 @@ namespace Hexenkessel {
 
     export let totalIngredientList: IngredientList = {
 
-        Ingredients: [
-            { name: "Spinnenbeine", price: 20, inputType: "checkBox" },
-            { name: "Krötenaugen", price: 30, inputType: "checkBox" },
-            { name: "Glibberwürmer", price: 40, inputType: "checkBox" },
-            { name: "Schlangengift", price: 50, inputType: "checkBox" }
-            { name: "Fledermausflügel", price: 75, inputType: "checkBox" }
+
+        "Potion Name": [
+            { name: "", price: 1, inputType: "input"}
+            
+        ],
+
+        "Description": [
+            { name: "", price: 1, inputType: "textarea"}
+            
+        ],
+
+        "Effects": [
+            { name: "", price: 1, inputType: "select"}
+            
+        ],
+
+        "Ingredients": [
+            { name: "Spinnenbeine", price: 20, inputType: "number"},
+            { name: "Krötenaugen", price: 30, inputType: "number"},
+            { name: "Glibberwürmer", price: 40, inputType: "number"},
+            { name: "Schlangengift", price: 50, inputType: "number"},
+            { name: "Fledermausflügel", price: 75, inputType: "number"},
+            { name: "bitumen", price: 75, inputType: "number"}
 
         ]
+    
     };
 }
 

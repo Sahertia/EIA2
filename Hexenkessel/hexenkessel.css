@@ -78,18 +78,55 @@ input[type=text], textarea[name=Area] {
 	border-radius: 4px;
   }
 
+  legend{
+	font-size: 30px;
+  }
+
 .selectEffect {
 	display: inline;
 	/* width: 40%; */
 
 }
 
+#fieldset_Ingredients>input {
+  /* padding: auto; */
+	margin: 10px; 
+	display: inline;
+	/* float: left; */
+}
+
+#fieldset_Ingredients>input {
+	clear: left;
+	background-color: #e7c84b;
+	padding: 6px;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	color: black;
+}
+
+/* #fieldset_Ingredients>input {
+	padding: 6px;
+	margin: 0.25em 1em;
+	float: left;
+}
+
+#fieldset_Ingredients>input {
+	clear: left;
+	background-color: #e7c84b;
+	padding: 6px;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	color: black;
+} */
+
 /* #info3, #info4 {
 	display: inline;
 	width: 50%;
 } */
 
-}
+
 
 /* #infos {
 	width: 40%;
