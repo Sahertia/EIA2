@@ -4,4 +4,4 @@ namespace Test {
 
 console.log(a);
 
-}
+} 
