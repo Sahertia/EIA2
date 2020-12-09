@@ -1,7 +1,3 @@
-namespace Test {
-    
-    let a: string = ("Rouven");
-
-console.log(a);
-
-} 
+window.addEventListener('resize', function() {
+console.log(window.innerWidth + "x" + window.innerHeight) 
+});
