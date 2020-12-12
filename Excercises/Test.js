@@ -1,7 +1,5 @@
 "use strict";
-var Test;
-(function (Test) {
-    let a = ("Rouven");
-    console.log(a);
-})(Test || (Test = {}));
+window.addEventListener("resize", function () {
+    console.log(window.innerWidth + "x" + window.innerHeight);
+});
 //# sourceMappingURL=Test.js.map

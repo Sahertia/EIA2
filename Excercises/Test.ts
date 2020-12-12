@@ -1,3 +1,4 @@
-window.addEventListener('resize', function() {
-console.log(window.innerWidth + "x" + window.innerHeight) 
+window.addEventListener("resize", function(): void {
+console.log(window.innerWidth + "x" + window.innerHeight); 
+
 });
