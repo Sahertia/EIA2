@@ -1,140 +1,191 @@
 "use strict";
-var A08_Canvas;
-(function (A08_Canvas) {
-    window.addEventListener("load", init);
+var Firework_Canvas;
+(function (Firework_Canvas) {
+    // TODO: Wie importiert man die scripts richtig?
+    // import RocketPhysics = Firework_Canvas.RocketWithPhysics;
+    let rocketParticles = []; // TODO
+    let maxRockets = 3000;
+    let rocketsSpawm = 1;
+    let rocketCascadeMax = 3;
+    let rocketsPerCascade = 10;
+    let updateTimer = 20;
     let ctx;
+    window.addEventListener("load", init);
+    window.addEventListener("click", spawnSomeRockets);
     function init() {
         let canvas = document.querySelector("canvas");
         if (!canvas)
             return;
+        canvas.width = 1600;
+        canvas.height = 1200;
+        console.log(maxRockets);
+        rocketParticles.length = maxRockets;
+        // let ctx: CanvasRenderingContext2D;
         ctx = canvas.getContext("2d");
-        canvas.width = 800;
-        canvas.height = 600;
-        // let canvas: HTMLCanvasElement = document.getElementById("canvas");
-        // let ctx: CanvasRenderingContext2D = canvas.getContext("2d");
-        drawHouse();
-        drawcloud(200, 200);
-        drawcloud2(600, 100);
-        ctx.fillStyle = "#0000ff";
-        // ctx.fillRect(0, 0, ctx.canvas.height, ctx.canvas.height);
-        ctx.strokeRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.beginPath();
-        ctx.arc(100, 100, 60, 40, 50);
-        // ctx.closePath();
+        ctx.fillStyle = "#000000"; // TODO: Check if opacity 
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.stroke();
-        // drawing an ellipse
-        // ctx.beginPath();
-        // ctx.ellipse(700, 500, 100, 780, Math.PI / 2.8, 0, 2 * Math.PI);
-        // ctx.stroke();
-        // create save points to reset canvas after translate
-        // reset
-        // draw house scaleable ?
-        function drawHouse() {
-            ctx.beginPath();
-            ctx.moveTo(400, 200);
-            ctx.lineTo(360, 200);
-            ctx.lineTo(360, 280);
-            ctx.lineTo(375, 280);
-            ctx.lineTo(375, 220);
-            ctx.lineTo(425, 220);
-            ctx.lineTo(425, 280);
-            ctx.lineTo(440, 280);
-            ctx.lineTo(440, 200);
-            ctx.lineTo(400, 200);
-            ctx.lineTo(400, 170);
-            ctx.lineTo(360, 200);
-            ctx.lineTo(400, 170);
-            ctx.lineTo(440, 200);
-            ctx.closePath();
-            ctx.stroke();
-        }
-        ctx.font = "20px serif";
-        ctx.textBaseline = "hanging";
-        ctx.strokeText("LIFT", 380, 205);
-        //draw snowHill
-        ctx.save();
+        spawnSomeRockets();
+        // update();
+        setInterval(update, updateTimer, canvas);
+    }
+    function update() {
+        let canvas = document.querySelector("canvas");
+        if (!canvas)
+            return;
+        ctx = canvas.getContext("2d");
+        // console.log("update");
+        // ctx.putImageData(saveBackground, 0, 0); // TODO: Understand this line
         ctx.beginPath();
-        ctx.moveTo(0, 420);
-        ctx.quadraticCurveTo(400, 140, 800, 420);
+        ctx.fillStyle = "#00000022"; // TODO: Check if opacity 
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.stroke();
-        ctx.restore();
-        // crazy cloud vorlage
-        // ctx.beginPath();
-        // ctx.moveTo(170, 80);
-        // ctx.bezierCurveTo(130, 100, 130, 150, 230, 150);
-        // ctx.bezierCurveTo(250, 180, 320, 180, 340, 150);
-        // ctx.bezierCurveTo(420, 150, 420, 120, 390, 100);
-        // ctx.bezierCurveTo(430, 40, 370, 30, 340, 50);
-        // ctx.bezierCurveTo(320, 5, 250, 20, 250, 50);
-        // ctx.bezierCurveTo(200, 5, 150, 20, 170, 80);
-        // ctx.closePath();
-        // ctx.lineWidth = 5;
-        // ctx.fillStyle = "#8ED6FF";
-        // ctx.fill();
-        // ctx.strokeStyle = "#0000ff";
-        // ctx.stroke();
-        function drawcloud(x, y) {
-            ctx.beginPath();
-            ctx.arc(x, y, 30, Math.PI * 0.5, Math.PI * 1.5);
-            ctx.arc(x + 35, y - 24, 35, Math.PI * 1, Math.PI * 1.85);
-            ctx.arc(x + 75, y - 20, 25, Math.PI * 1.37, Math.PI * 1.91);
-            ctx.arc(x + 100, y, 30, Math.PI * 1.5, Math.PI * 0.5);
-            ctx.moveTo(x + 100, y + 30);
-            ctx.lineTo(x, y + 30);
-            ctx.strokeStyle = "#797874";
-            ctx.stroke();
-            ctx.fillStyle = "#8ED6FF";
-            ctx.fill();
-        }
-        function drawcloud2(x, y) {
-            ctx.beginPath();
-            ctx.arc(x, y, 30, Math.PI * 0.5, Math.PI * 1.5);
-            ctx.arc(x + 35, y - 24, 35, Math.PI * 1, Math.PI * 1.85);
-            ctx.arc(x + 75, y - 20, 25, Math.PI * 1.37, Math.PI * 1.91);
-            ctx.arc(x + 100, y, 30, Math.PI * 1.5, Math.PI * 0.5);
-            ctx.moveTo(x + 100, y + 30);
-            ctx.lineTo(x, y + 30);
-            ctx.strokeStyle = "#797874";
-            ctx.stroke();
-            ctx.fillStyle = "#8ED6FF";
-            ctx.fill();
-        }
-        ctx.restore();
-        ctx.save();
-        drawLift();
-        function drawLift() {
-            // ctx.beginPath();
-            // ctx.rect(100, 500, 40, 100);
-            // ctx.stroke();
-            // ctx.fillStyle = "#000000";
-            // ctx.fill();
-            // Create gradient
-            //Cables
-            ctx.beginPath();
-            // ctx.lineWidth = 5;
-            // ctx.strokeStyle = "#000000";
-            ctx.moveTo(100, 500);
-            ctx.lineTo(360, 220);
-            ctx.closePath();
-            ctx.moveTo(150, 500);
-            ctx.lineTo(375, 220);
-            ctx.stroke();
-            // Top of the Pole
-            ctx.beginPath();
-            ctx.arc(125, 500, 25, 40, 50);
-            ctx.fillStyle = "#000000";
-            ctx.fill();
-            ctx.stroke();
-            // Lift Pole
-            let grd = ctx.createLinearGradient(0, 0, 0, 650);
-            grd.addColorStop(0.8, "black");
-            grd.addColorStop(0.2, "yellow");
-            grd.addColorStop(1, "orange");
-            // Fill with gradient
-            ctx.fillStyle = grd;
-            ctx.fillRect(100, 500, 50, 100);
-            ctx.restore();
+        // TODO: Implement physics for all rockets
+        for (let i = 0; i < maxRockets; i++) {
+            if (rocketParticles[i] == null) {
+                continue;
+            }
+            else if (rocketParticles[i].shouldBeDestroyed) {
+                // Can the rocket spawn sub particles?
+                if (rocketParticles[i] == null || rocketParticles[i].hierarchy < rocketCascadeMax && rocketParticles[i].canBeOverwritten == false) // TODO: let each rocket know how many hierarchies it has
+                 {
+                    for (let i = 0; i < rocketsPerCascade; i++) {
+                        trySpawnRocketParticle(rocketParticles[i].hierarchy + 1, i);
+                    }
+                }
+                rocketParticles[i].canBeOverwritten = true;
+                rocketParticles.splice(i, 1);
+                rocketParticles.pop();
+                i--;
+            }
+            else {
+                rocketParticles[i].calculateNewValue(updateTimer, canvas.width, canvas.height);
+                //  console.log(rocketParticles[i].yVelocity);
+                ctx.save();
+                ctx.beginPath();
+                // console.log(rocketParticles[i].lifetime);
+                ctx.fillStyle = "#ffffff"; // TODO: Check if opacity 
+                ctx.arc(rocketParticles[i].xPosition, rocketParticles[i].yPosition, 100 * rocketParticles[i].size, 0, 2 * Math.PI, false);
+                // ctx.fillRect(rocketParticles[i].xPosition, rocketParticles[i].yPosition, 50 * rocketParticles[i].size, 200 * rocketParticles[i].size);
+                // let rotationValue: number = Math.sin(this.xVelocity / this.yVelocity);
+                // ctx.rotate(rotationValue + 3.1415 / 2);
+                ctx.fill();
+                ctx.fillStyle = rocketParticles[i].colorCurrent;
+                ctx.closePath();
+                ctx.stroke();
+                ctx.restore();
+            }
         }
     }
-})(A08_Canvas || (A08_Canvas = {}));
+    function spawnSomeRockets() {
+        // On start, spawn 5 rockets randomly
+        for (let i = 0; i < rocketsSpawm; i++) {
+            trySpawnRocketNew();
+            // console.log(rocketParticles[i].size);
+            // console.log(rocketParticles[i].xPosition);
+        }
+    }
+    // Code to launch a new rocket
+    function trySpawnRocketNew() {
+        let canvas = document.querySelector("canvas");
+        if (!canvas)
+            return;
+        ctx = canvas.getContext("2d");
+        let spawnIndex = GetFreeRocketSlot();
+        if (spawnIndex == -1 || canvas == null) {
+            return;
+        }
+        let newRocket;
+        let xPos = Math.random() * canvas.width;
+        let yPos = canvas.height; // TODO: check what canvas.height is
+        let xVel = (Math.random() - 0.5) * 2 * 20000 / canvas.width; // How much sideways the rocket flies 
+        let yVel = (Math.random() * (-5)) - 20000 / canvas.height;
+        // let yVel : number = (Math.random() * (-5)) - 100; 
+        let lifetime = Math.random() * 0.05 + 0.025;
+        // TODO: Get small/middle/large
+        /*
+        if()
+        {
+
+        }
+        */
+        let size = 0.5;
+        let colorStart = "#000000";
+        let colorEnd = "#ffffff";
+        let radius = Math.random() * 3 + 1; // TODO: get value from user input
+        newRocket = new RocketWithPhysics(xPos, yPos, xVel, yVel, 9.81, lifetime, size, colorStart, colorEnd, 0, radius);
+        rocketParticles[spawnIndex] = newRocket;
+    }
+    function trySpawnRocketParticle(hierarchy, index) {
+        let spawnIndex = GetFreeRocketSlot();
+        if (spawnIndex == -1) {
+            return;
+        }
+        let lifetime = Math.random() * 0.05 + 0.05; // TODO: get value for this from user input
+        let colorStart = "#000000"; // TODO: change to cascade from main rocket
+        let colorEnd = "#ffffff66";
+        let radius = rocketParticles[index].size * 0.5; // TODO: get value from user input
+        // let radius : number = Math.random() * 0.05 + 0.05; // TODO: get value from user input
+        let newRocket;
+        newRocket = new RocketWithPhysics(0, 0, 0, 0, 9.81 / 2, lifetime, radius, colorStart, colorEnd, hierarchy, radius);
+        newRocket.copyPosition(rocketParticles[index]);
+        newRocket.xVelocity += (Math.random() - 0.5) * 30;
+        newRocket.yVelocity += (Math.random() - 0.5) * 30;
+        rocketParticles[spawnIndex] = newRocket;
+    }
+    function GetFreeRocketSlot() {
+        // console.log(rocketParticles.length);
+        for (let i = 0; i < maxRockets; i++) {
+            if (rocketParticles[i] == null || rocketParticles[i].canBeOverwritten) // Rocket respawn problem here
+             {
+                console.log(i);
+                return i;
+            }
+        }
+        return -1;
+    }
+    class RocketWithPhysics {
+        constructor(_xPosition, _yPosition, _xVelocity, _yVelocity, _yGravity, _lifetime, _size, _colorStart, _colorEnd, _hierachy, _radius) {
+            this.xPosition = _xPosition;
+            this.yPosition = _yPosition;
+            this.xVelocity = _xVelocity;
+            this.yVelocity = _yVelocity;
+            this.rotationValue = 0;
+            this.yGravity = _yGravity;
+            this.lifetime = _lifetime;
+            this.size = _size;
+            this.colorStart = _colorStart;
+            this.colorEnd = _colorEnd;
+            this.shouldBeDestroyed = false;
+            this.canBeOverwritten = false;
+            this.hierarchy = _hierachy;
+            this.radius = _radius;
+        }
+        // Calculate the new values for the next update frame thingy
+        copyPosition(_target) {
+            this.xPosition = _target.xPosition;
+            this.yPosition = _target.yPosition;
+            this.xVelocity = _target.xVelocity;
+            this.yVelocity = _target.yVelocity;
+        }
+        // Calculate the new values for the next update frame thingy
+        calculateNewValue(timeElapsed, canvasWidth, canvasHeigth) {
+            // this.xVelocity = this.xVelocity; // x velocity should stay the same
+            this.yVelocity = this.yVelocity + (this.yGravity * timeElapsed / 1000); // gravity dampens the y velocity over time
+            this.xPosition = Math.min(Math.max(this.xPosition + this.xVelocity, 0), canvasWidth);
+            this.yPosition = Math.min(Math.max(this.yPosition + this.yVelocity, 0), canvasHeigth);
+            //  // colorLerp();
+            if (this.lifetime < 0) {
+                this.shouldBeDestroyed = true;
+            }
+            else {
+                this.lifetime = this.lifetime - (timeElapsed / 10000);
+            }
+            /*else {
+                console.log(this.lifetime);
+            }*/
+        }
+    }
+})(Firework_Canvas || (Firework_Canvas = {}));
 //# sourceMappingURL=canvas.js.map
